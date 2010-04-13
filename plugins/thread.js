@@ -7,7 +7,7 @@ Thread: ( ->
   @interval:  100
 
   @add: ((preempt, f) ->
-    @queue[(if preempt then "preemptible" else "priority")].push(( -> f() ))
+    @queue[(if preempt then "preemptible" else "priority")].push(f)
     return this
   )
 
