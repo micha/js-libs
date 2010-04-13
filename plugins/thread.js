@@ -18,12 +18,16 @@ Thread: ( ->
       else if (!@running && @queue.preemptible.length > 0)
         (@queue.preemptible.shift())()
     )), @interval)
+
+    return this
   )
 
   @stop: ( ->
     if (@qrunner?) 
       clearInterval(@qrunner)
       @qrunner: null
+
+    return this
   )
 
   return this
